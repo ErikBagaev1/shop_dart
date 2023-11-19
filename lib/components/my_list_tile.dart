@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
 
 class MyListTile extends StatelessWidget {
-  const MyListTile({super.key});
+  final String text;
+  final Function() onTap;
+  final IconData icon;
+  const MyListTile(
+      {super.key, required this.text, required this.icon, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return const ListTile();
+    return Padding(
+      padding: const EdgeInsets.only(left: 25),
+      child: ListTile(
+        leading: Icon(
+          icon,
+          color: Colors.grey,
+        ),
+        title: Text(text),
+        onTap: onTap,
+      ),
+    );
   }
 }
