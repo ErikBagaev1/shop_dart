@@ -41,7 +41,10 @@ class MyDrower extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 25.0),
             child: MyListTile(
-                text: 'Выход', icon: Icons.exit_to_app, onTap: () {}),
+                text: 'Выход',
+                icon: Icons.exit_to_app,
+                onTap: () => Navigator.pushNamedAndRemoveUntil(
+                    context, '/intro_page', (route) => false)),
           ),
         ],
       ),
